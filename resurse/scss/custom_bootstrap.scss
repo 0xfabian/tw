@@ -1,0 +1,41 @@
+@use "../../node_modules/bootstrap/scss/bootstrap.scss" with
+(
+    $primary: rgb(46, 126, 255),
+    $secondary: rgb(0, 172, 202),
+
+    $border-radius: 0.5rem,
+
+    $grid-breakpoints:(
+        xs: 0,
+        sm: 600px,
+        md: 1200px
+    ),
+
+    $container-max-widths:(
+        xs: 0,
+        sm: 600px,
+        md: 1200px
+    ),
+
+    $h1-font-size: 2.5rem,               
+    $h2-font-size: 2rem,
+
+    $font-family-base: "PT Sans"
+);
+
+a
+{
+    text-decoration: none;
+}
+
+h2
+{
+    color: rgb(36, 92, 182);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+hr
+{
+    border: none;
+}

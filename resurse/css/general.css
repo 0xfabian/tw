@@ -724,11 +724,11 @@ figcaption::before
     font-weight: bold;
 }
 
-main
+/* main
 {
     display: flex;
     justify-content: center;
-}
+} */
 
 @media (max-width: 1200px) 
 {

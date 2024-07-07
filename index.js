@@ -78,6 +78,7 @@ fs.watch(obGlobal.folderScss, function(event, fis)
 app.set("view engine", "ejs");
 
 app.use("/resurse", express.static(__dirname + "/resurse"));
+app.use("/node_modules", express.static(__dirname + "/node_modules"));
 
 app.use(/^\/resurse(\/(?=[a-zA-Z0-9])+[a-zA-Z0-9]*)*/, function(req, res)
 {
