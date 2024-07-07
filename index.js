@@ -64,6 +64,17 @@ for(let fis of fisiere)
 		compScss(fis);
 }
 
+fs.watch(obGlobal.folderScss, function(event, fis)
+{
+	if(event == "change" || event == "rename")
+	{
+		let cale = path.join(obGlobal.folderScss, fis);
+
+		if(fs.existsSync(cale))
+			compScss(cale);
+	}
+});
+
 app.set("view engine", "ejs");
 
 app.use("/resurse", express.static(__dirname + "/resurse"));
