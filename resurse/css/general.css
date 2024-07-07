@@ -1,7 +1,7 @@
 body
 {
     --background-color: rgb(245, 245, 245);
-    --background-color-darker: rgb(225, 225, 225);
+    --background-color-darker: rgb(220, 220, 220);
     --card-color: rgb(255, 255, 255);
     --text-color: rgb(22, 22, 22);
     --border-color: rgb(230, 230, 230);
@@ -771,8 +771,8 @@ figcaption::before
 hr
 {
     border: none;
-    background: repeating-linear-gradient(45deg, var(--background-color-darker) 0px, transparent 1px, transparent 2px, var(--background-color-darker) 3px, var(--background-color-darker) 6px), 
-    repeating-linear-gradient(135deg, var(--background-color-darker) 0px, transparent 1px, transparent 2px, var(--background-color-darker) 3px, var(--background-color-darker) 6px);
+    background: repeating-linear-gradient(45deg, var(--primary-color-darker) 0px, transparent 1px, transparent 2px, var(--primary-color-darker) 3px, var(--primary-color-darker) 6px), 
+    repeating-linear-gradient(135deg, var(--primary-color-darker) 0px, transparent 1px, transparent 2px, var(--primary-color-darker) 3px, var(--primary-color-darker) 6px);
     background-size: 100% 50%, 100% 50%;
     background-position: top, bottom;
     background-repeat: no-repeat;
