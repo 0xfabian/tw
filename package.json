@@ -1,0 +1,35 @@
+{
+  "name": "tw",
+  "version": "1.0.0",
+  "description": "Magazin Online de Componente PC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pc",
+    "componente pc",
+    "periferice",
+    "software",
+    "accesorii pc",
+    "procesoare",
+    "plăci de bază",
+    "plăci video",
+    "memorie ram",
+    "ssd",
+    "hdd",
+    "surse de alimentare",
+    "carcase pc",
+    "tastaturi",
+    "mouse",
+    "monitoare",
+    "sisteme de operare",
+    "cabluri pc"
+  ],
+  "author": "Dumitru Fabian",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}

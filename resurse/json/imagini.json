@@ -1,0 +1,110 @@
+{
+    "cale_galerie": "resurse/imagini",
+    "imagini": [
+        {
+            "cale_relativa": "geforce-rtx-4060.jpg",
+            "nume": "Nvidia GeForce RTX 4060",
+            "alternativ": "",
+            "descriere": "Placa video",
+            "intervale_ore": [[2,7],[14,16],[22,23]]
+        },
+        {
+            "cale_relativa": "raptor-lake-refresh-core-i9-14900kf.jpg",
+            "nume": "Intel Raptor Lake i9 14900KF",
+            "alternativ": "",
+            "descriere": "Procesor",
+            "intervale_ore": [[5,7],[10,16],[18,23]]
+        },
+        {
+            "cale_relativa": "b760m.jpg",
+            "nume": "GIGABYTE B760M",
+            "alternativ": "",
+            "descriere": "Placa de baza",
+            "intervale_ore": [[1,2],[10,11],[18,19]]
+        },
+        {
+            "cale_relativa": "ryzen-5-3500.jpg",
+            "nume": "AMD Ryzen 5 3500",
+            "alternativ": "",
+            "descriere": "Procesor",
+            "intervale_ore": [[1,9],[10,11],[13,16]]
+        },
+        {
+            "cale_relativa": "cpu-core-i7-14700k.jpg",
+            "nume": "Intel Core i7 14700K",
+            "alternativ": "",
+            "descriere": "Procesor",
+            "intervale_ore": [[6,9],[11,12],[15,20]]
+        },
+        {
+            "cale_relativa": "geforce-rtx-4060.jpg",
+            "nume": "Nvidia GeForce RTX 4060",
+            "alternativ": "",
+            "descriere": "Placa video",
+            "intervale_ore": [[2,7],[14,16],[22,23]]
+        },
+        {
+            "cale_relativa": "raptor-lake-refresh-core-i9-14900kf.jpg",
+            "nume": "Intel Raptor Lake i9 14900KF",
+            "alternativ": "",
+            "descriere": "Procesor",
+            "intervale_ore": [[5,7],[10,16],[18,23]]
+        },
+        {
+            "cale_relativa": "b760m.jpg",
+            "nume": "GIGABYTE B760M",
+            "alternativ": "",
+            "descriere": "Placa de baza",
+            "intervale_ore": [[1,2],[10,11],[18,19]]
+        },
+        {
+            "cale_relativa": "ryzen-5-3500.jpg",
+            "nume": "AMD Ryzen 5 3500",
+            "alternativ": "",
+            "descriere": "Procesor",
+            "intervale_ore": [[1,9],[10,11],[13,16]]
+        },
+        {
+            "cale_relativa": "cpu-core-i7-14700k.jpg",
+            "nume": "Intel Core i7 14700K",
+            "alternativ": "",
+            "descriere": "Procesor",
+            "intervale_ore": [[6,9],[11,12],[15,20]]
+        },
+        {
+            "cale_relativa": "geforce-rtx-4060.jpg",
+            "nume": "Nvidia GeForce RTX 4060",
+            "alternativ": "",
+            "descriere": "Placa video",
+            "intervale_ore": [[2,7],[14,16],[22,23]]
+        },
+        {
+            "cale_relativa": "raptor-lake-refresh-core-i9-14900kf.jpg",
+            "nume": "Intel Raptor Lake i9 14900KF",
+            "alternativ": "",
+            "descriere": "Procesor",
+            "intervale_ore": [[5,7],[10,16],[18,23]]
+        },
+        {
+            "cale_relativa": "b760m.jpg",
+            "nume": "GIGABYTE B760M",
+            "alternativ": "",
+            "descriere": "Placa de baza",
+            "intervale_ore": [[1,2],[10,11],[18,19]]
+        },
+        {
+            "cale_relativa": "ryzen-5-3500.jpg",
+            "nume": "AMD Ryzen 5 3500",
+            "alternativ": "",
+            "descriere": "Procesor",
+            "intervale_ore": [[1,9],[10,11],[13,16]]
+        },
+        {
+            "cale_relativa": "cpu-core-i7-14700k.jpg",
+            "nume": "Intel Core i7 14700K",
+            "alternativ": "",
+            "descriere": "Procesor",
+            "intervale_ore": [[6,9],[11,12],[15,20]]
+        }
+    ]
+}

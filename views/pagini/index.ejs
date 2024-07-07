@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+    <%- include("../fragmente/head.ejs") %>
+
+        <body>
+            <%- include("../fragmente/header.ejs") %>
+
+                <div class="page-break"></div>
+                <div id="banner" class="print-only">Acesta este un proiect școlar!</div>
+                <h1 id="site-title" class="print-only">Magazin Componente PC</h1>
+                <main>
+                    <div id="grid-container">
+                        <div class="zona-1">
+                            <section>
+                                <h2><i class="fa-solid fa-gear fa-spin"></i>&nbsp;&nbsp;Bun venit la Magazinul nostru de
+                                    Componente
+                                    PC
+                                </h2>
+                                <p>Oferim o gamă variată de <b>componente PC</b>, <b>periferice</b>, și <b>software</b>
+                                    de
+                                    cea
+                                    mai bună
+                                    calitate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+                                    voluptas
+                                    inventore suscipit modi fugiat dolorum doloremque consequatur aut, ex quam id autem,
+                                    itaque
+                                    deleniti architecto maxime, eos in nesciunt quas?</p>
+                                <figure>
+                                    <picture>
+                                        <source media="(max-width: 600px)" srcset="resurse/imagini/imagine-mica.jpg">
+                                        <source media="(max-width: 1200px)" srcset="resurse/imagini/imagine-medie.jpg">
+                                        <img id="main-img" src="resurse/imagini/imagine-mare.jpg" alt="Imagine magazin">
+                                    </picture>
+                                    <figcaption>Imagine reprezentativă a magazinului nostru.</figcaption>
+                                </figure>
+                                <details>
+                                    <summary>Oferte speciale</summary>
+                                    <p>Descoperiți ofertele noastre speciale la componente PC!</p>
+                                </details>
+                            </section>
+                        </div>
+                        <div class="zona-2 table-container">
+                            <table>
+                                <caption><i class="fa-solid fa-arrow-trend-up"></i>&nbsp;&nbsp;Best Selling</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Produs</th>
+                                        <th>Categorie</th>
+                                        <th>Pret</th>
+                                        <th>Vanzari</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Intel i9-11900K</td>
+                                        <td>CPU</td>
+                                        <td>$499</td>
+                                        <td>1500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ASUS ROG Strix RTX 3080</td>
+                                        <td>GPU</td>
+                                        <td>$799</td>
+                                        <td>1200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Samsung 970 EVO Plus</td>
+                                        <td>SSD</td>
+                                        <td>$199</td>
+                                        <td>1800</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HyperX Fury 16GB</td>
+                                        <td rowspan="2">RAM</td>
+                                        <td>$89</td>
+                                        <td>2100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Corsair Vengeance 32GB</td>
+                                        <td>$159</td>
+                                        <td>1600</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4">Iulie 2024</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="zona-3">
+                            <h2><i class="fa-solid fa-calendar-days"></i>&nbsp;&nbsp;Calendar</h2>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti perferendis, non vero
+                            itaque
+                            quod
+                            quae aut dicta facere molestiae et cum doloribus voluptas odio sed beatae cupiditate minus
+                            odit
+                            natus.
+                        </div>
+                        <div class="zona-4">
+                            <h2><i class="fa-solid fa-scroll"></i>&nbsp;&nbsp;Anunturi</h2>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis natus et minima, tempore
+                            eum
+                            ipsum
+                            veritatis quibusdam ab iure aliquam veniam? Odit modi in optio explicabo rerum, autem
+                            quisquam
+                            unde?
+                        </div>
+                        <div class="zona-5">
+                            <h2><i class="fa-solid fa-users"></i>&nbsp;&nbsp;Utilizatori online</h2>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas laborum iure sint eveniet
+                            minus,
+                            nulla ipsam! Qui, blanditiis autem? Voluptates esse vitae quasi id nihil rerum vero, illo
+                            odit
+                            nostrum?
+                        </div>
+                        <div class="zona-6">
+                            <section id="catalog" class="align-left">
+                                <h2><i class="fa-solid fa-list"></i>&nbsp;&nbsp;Catalog</h2>
+                                <article id="componente">
+                                    <h3>Componente PC</h3>
+                                    <p>Avem o gamă largă de <i>procesoare</i>, <i>plăci de bază</i>, și <i>plăci
+                                            video</i>.
+                                    </p>
+                                    <ol>
+                                        <li>Procesoare <i class="fa-solid fa-microchip"></i>
+                                        </li>
+                                        <li>Memorie RAM <i class="fa-solid fa-memory"></i></li>
+                                        <li>Hard disk-uri <i class="fa-solid fa-hard-drive"></i></li>
+                                        <li>Surse <i class="fa-solid fa-plug"></i></li>
+                                    </ol>
+                                </article>
+                                <article id="periferice">
+                                    <h3>Periferice</h3>
+                                    <p>De la <i>tastaturi</i> și <i>mouse-uri</i> până la <i>monitoare</i> de înaltă
+                                        rezoluție.
+                                    </p>
+                                    <ul>
+                                        <li>Tastaturi <i class="fa-solid fa-keyboard"></i></li>
+                                        <li>Mouse-uri <i class="fa-solid fa-computer-mouse"></i></li>
+                                        <li>Monitoare <i class="fa-solid fa-desktop"></i></li>
+                                    </ul>
+                                </article>
+                            </section>
+                        </div>
+                        <div class="zona-7">
+                            <h2><i class="fa-solid fa-server">&nbsp;&nbsp;</i>Site și server</h2>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum assumenda nostrum cupiditate
+                            commodi
+                            possimus, esse aliquid qui voluptatum ipsum accusamus veniam officiis magni cumque dicta
+                            quos
+                            explicabo maxime corporis nobis?
+                        </div>
+                        <div class="zona-8">
+                            <aside>
+                                <h2><i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;&nbsp;Resurse utile</h2>
+                                <div>
+                                    <div class="tabs-container">
+                                        <a class="tab"
+                                            href="https://www.youtube.com/embed/AnTezcHNwP0?si=7I5_iBvXOTsKuO_o"
+                                            target="iframe">Video 1
+                                        </a>
+                                        <a class="tab"
+                                            href="https://www.youtube.com/embed/AsykNkUMoNU?si=DNJ3z1c3MHffnwoW"
+                                            target="iframe">Video 2
+                                        </a>
+                                        <a class="tab"
+                                            href="https://www.youtube.com/embed/THhrq58cxgI?si=QyAPjjn7S6C3p6g1"
+                                            target="iframe">Video 3
+                                        </a>
+                                    </div>
+                                    <iframe class="ifr-video" name="iframe"
+                                        src="https://www.youtube.com/embed/AnTezcHNwP0?si=7I5_iBvXOTsKuO_o"></iframe>
+                                </div>
+                                <p>Vizitați <a href="https://www.pcgarage.ro" target="_blank">site-ul nostru
+                                        partener</a>
+                                    pentru
+                                    mai
+                                    multe informații.</p>
+
+                                <%- include("../fragmente/galerie.ejs") %>
+                            </aside>
+                        </div>
+                    </div>
+                </main>
+                <div class="page-break"></div>
+
+                <%- include("../fragmente/footer.ejs") %>
+        </body>
+
+</html>

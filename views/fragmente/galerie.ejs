@@ -1,0 +1,17 @@
+<div class="galerie">
+    <% imagini.forEach(function(imagine) { %>
+        <% if (imagine.cale_relativa) { %>
+            <figure class="galerie-img">
+                <picture>
+                    <img style="width: 100%" src="<%= imagine.cale_relativa %>" title="<%= imagine.descriere %>"
+                        alt="<%= imagine.alternativ %>">
+                </picture>
+                <figcaption>
+                    <%= imagine.nume %>
+                </figcaption>
+            </figure>
+            <% } else { %>
+                <div class="galerie-placeholder"></div>
+                <% } %>
+                    <% }) %>
+</div>
