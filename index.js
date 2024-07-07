@@ -205,7 +205,7 @@ function initImagini()
     obGlobal.obImagini = obImagini;
 }
 
-function calcImagini(res)
+function calcImagini()
 {
     let ret = [];
 

@@ -29,6 +29,7 @@
   "author": "Dumitru Fabian",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "sass": "^1.77.6"
