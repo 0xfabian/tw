@@ -750,3 +750,31 @@ main
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
+#reflexie
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#reflexie > div:first-child
+{
+    transform: skewY(-15deg);
+}
+
+#reflexie > div:last-child
+{
+    transform: scaleX(-1) skewY(-15deg);
+}
+
+hr
+{
+    border: none;
+    background: repeating-linear-gradient(45deg, var(--background-color-darker) 0px, transparent 1px, transparent 2px, var(--background-color-darker) 3px, var(--background-color-darker) 6px), 
+    repeating-linear-gradient(135deg, var(--background-color-darker) 0px, transparent 1px, transparent 2px, var(--background-color-darker) 3px, var(--background-color-darker) 6px);
+    background-size: 100% 50%, 100% 50%;
+    background-position: top, bottom;
+    background-repeat: no-repeat;
+    height: 8px;
+}
