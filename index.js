@@ -1,16 +1,20 @@
 const express = require("express")
 const fs = require("fs")
-const path = require('path');
+const path = require("path");
+const sass = require("sass");
 
 app = express();
 
 obGlobal = 
 {
     obErori: null,
-    obImagini: null
+    obImagini: null,
+    folderScss: path.join(__dirname, "resurse/scss"),
+	folderCss: path.join(__dirname, "resurse/css"),
+	folderBackup: path.join(__dirname, "backup")
 }
 
-vecFoldere = ["temp", "temp1"];
+vecFoldere = ["temp", "temp1", "backup"];
 
 for (let folder of vecFoldere)
 {
@@ -19,6 +23,46 @@ for (let folder of vecFoldere)
 	if (!fs.existsSync(cale))
 		fs.mkdirSync(cale);
 } 
+
+function compScss(caleScss, caleCss)
+{
+	if(!caleCss)
+    {
+		let numeFisExt = path.basename(caleScss);
+		let numeFis = numeFisExt.split(".")[0];
+		caleCss = numeFis + ".css"
+	}
+
+	if(!path.isAbsolute(caleScss))
+		caleScss = path.join(obGlobal.folderScss, caleScss);
+
+	if(!path.isAbsolute(caleCss))
+		caleCss = path.join(obGlobal.folderCss, caleCss);
+
+	let caleBackup = path.join(obGlobal.folderBackup, "resurse/css")	
+
+	if(!fs.existsSync(caleBackup))
+		fs.mkdirSync(caleBackup, { recursive: true })
+
+	let numeFisCss = path.basename(caleCss);
+
+	if(fs.existsSync(caleCss))
+		fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css", numeFisCss));
+    
+	let rez = sass.compile(caleScss, { "sourceMap": true });
+
+	fs.writeFileSync(caleCss, rez.css);
+
+	console.log("compiled ", rez);
+}
+
+fisiere = fs.readdirSync(obGlobal.folderScss);
+
+for(let fis of fisiere)
+{
+	if(path.extname(fis) == ".scss")
+		compScss(fis);
+}
 
 app.set("view engine", "ejs");
 
