@@ -2,6 +2,26 @@ const express = require("express")
 const fs = require("fs")
 const path = require("path");
 const sass = require("sass");
+const {Client} = require("pg");
+
+var client = new Client(
+{
+    database: "cti_2024",
+    user: "fabian",
+    password: "123456",
+    host: "localhost",
+    port: 5432
+});
+
+client.connect();
+
+client.query("select * from public.produse", function(err, rez)
+{
+	if(err)
+		console.log(err);
+	else
+		console.log(rez.rows);
+});
 
 app = express();
 
