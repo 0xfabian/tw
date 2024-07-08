@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+    <%- include("../fragmente/head.ejs"); %>
+
+        <body>
+
+            <%- include("../fragmente/header.ejs"); %>
+
+                <main>
+
+                    <div class="produse">
+                        <% produse.forEach(function(produs) { %>
+                            <div class="produs-item">
+                                <a href="/produs?id=<%= produs.id %>">
+                                    <img class="produs-img" src="/resurse/imagini/produse/<%= produs.imagine %>"></img>
+                                    <div class="produs-nume">
+                                        <%= produs.descriere %>
+                                    </div>
+                                </a>
+                                <hr>
+                                <ul class="produs-specificatii">
+                                    <% produs.specificatii.forEach(function(spec) { %>
+                                        <li class="produs-spec">
+                                            <%= spec %>
+                                        </li>
+                                        <% } ) %>
+                                </ul>
+                                <hr>
+                                <div>
+                                    <div class="produs-pret">
+                                        <%= produs.pret %> RON
+                                    </div>
+                                    <div class="produs-stoc" <%=produs.stoc %>>
+                                        Stoc <%= produs.stoc %>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                </main>
+
+                <%- include("../fragmente/footer.ejs"); %>
+
+        </body>
+
+</html>

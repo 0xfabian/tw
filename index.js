@@ -15,14 +15,6 @@ var client = new Client(
 
 client.connect();
 
-client.query("select * from public.produse", function(err, rez)
-{
-	if(err)
-		console.log(err);
-	else
-		console.log(rez.rows);
-});
-
 app = express();
 
 obGlobal = 
@@ -135,6 +127,28 @@ app.get("/galerie", function(req, res)
         imagini: calcImagini()
     });
 })
+
+app.get("/produse", function(req, res)
+{
+    console.log("request " + req.url);
+
+    client.query("select * from public.produse", function(err, db_res)
+    {
+        if(err)
+        {
+            console.log(err);
+            afisEroare(res, 2);
+        }
+        else
+        {
+            res.render("pagini/produse", 
+            {
+                produse: db_res.rows,
+            });
+        }
+    });
+})
+
 
 app.get("/favicon.ico", function(req, res) 
 {
