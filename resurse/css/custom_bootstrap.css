@@ -9072,3 +9072,29 @@ hr {
   border: none;
   opacity: 1;
 }
+
+#reflexie {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#reflexie > h2:first-child {
+  transform: skewY(-15deg);
+}
+
+#reflexie > h2:last-child {
+  transform: scaleX(-1) skewY(-15deg);
+}
+
+#reflexie > h2:has(+ h2:hover) {
+  color: cyan;
+}
+
+#reflexie > h2:hover {
+  color: cyan;
+}
+
+#reflexie > h2:hover + h2 {
+  color: cyan;
+}

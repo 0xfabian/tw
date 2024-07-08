@@ -751,23 +751,6 @@ figcaption::before
     }
 }
 
-#reflexie
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-#reflexie > div:first-child
-{
-    transform: skewY(-15deg);
-}
-
-#reflexie > div:last-child
-{
-    transform: scaleX(-1) skewY(-15deg);
-}
-
 hr
 {
     border: none;
