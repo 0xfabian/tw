@@ -165,6 +165,37 @@ app.get("/produse", function(req, res)
     });
 })
 
+app.get("/produs/:id", function(req, res)
+{
+    console.log(req.params);
+
+    if (req.params.id)
+    {
+        let id = parseInt(req.params.id);
+
+        if (id != NaN && id >= 0)
+        {
+            client.query(`select * from produse where id = ${id}`, function(err, db_res)
+            {
+                if(err)
+                {
+                        console.log(err);
+                        afisEroare(res, 2);
+                }
+                else
+                {
+                    if (db_res.rows.length == 0)
+                        afisEroare(res, 404);
+                    else
+                        res.render("pagini/produs", {produs: db_res.rows[0]})
+                }
+            });
+        }
+        else
+            afisEroare(res, 404);
+    }
+});
+
 app.get("/favicon.ico", function(req, res) 
 {
     console.log("request " + req.url);

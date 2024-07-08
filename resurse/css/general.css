@@ -6,7 +6,7 @@ body
     --text-color: rgb(22, 22, 22);
     --border-color: rgb(230, 230, 230);
     --highlight-color: rgb(157, 8, 8);
-    --primary-color: rgb(46, 126, 255);
+    --primary-color: rgb(56, 124, 233);
     --primary-color-darker: rgb(36, 92, 182);
     --primary-color-lighter: rgb(50, 170, 255);
     --table-hover-color: rgba(46, 126, 255, 0.7);
@@ -864,6 +864,14 @@ hr
     margin-bottom: 10px;
 }
 
+.produs hr
+{
+    background: none;
+    border-top: 1px solid var(--border-color);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .produse ul
 {
     padding-left: 20px;
@@ -960,4 +968,175 @@ select
 html 
 {
     scrollbar-gutter: stable;
+}
+
+.produs
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.produs .mycard
+{
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.06);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.produs #nume
+{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.produs #brand
+{
+    font-size: 20px;
+    color: rgb(136, 136, 136);
+}
+
+.produs #sus
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+}
+
+.produs #jos
+{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.produs #poza-mare
+{
+    width: 400px;
+    padding: 50px;
+    transition: padding 0.2s;
+}
+
+.produs #poza-mare:hover
+{
+    padding: 40px;
+}
+
+.produs #desc1
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.produs #pret
+{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.produs #stoc
+{
+    font-size: 18px;
+}
+
+.produs #butoane
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.produs #img
+{
+    height: fit-content;
+}
+
+.produs > #img #poze
+{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.produs > #img #poze *
+{
+    width: 80px;
+    padding: 20px;
+    aspect-ratio: 1;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.06);
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.produs > #img #poze *:hover
+{
+    border: 1px solid var(--primary-color);
+    box-shadow: 0px 0px 20px 0px var(--table-hover-color);
+}
+
+.btn-produs
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.06);
+    transition: background 0.2s;
+    width: 100%;    
+}
+
+.btn-produs div
+{
+    flex-grow: 1;
+}
+
+.btn-produs:hover
+{
+    background: var(--primary-color-lighter); 
+}
+
+.btn-produs:active
+{
+    background: var(--primary-color);
+}
+
+.produs #dreapta
+{
+    margin-left: 10px;
+}
+
+.produs #jos
+{
+    margin-top: 10px;
+}
+
+@media (max-width: 1200px)
+{
+    .produs
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .produs #img
+    {
+        margin-bottom: 10px;
+    }
+
+    .produs #drepta
+    {
+        margin-left: 0;
+    }
 }

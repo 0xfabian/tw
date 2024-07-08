@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+    <%- include("../fragmente/head.ejs"); %>
+
+        <body>
+
+            <%- include("../fragmente/header.ejs"); %>
+
+                <main>
+                    <div class="produs">
+                        <div id="img" class="mycard">
+                            <div id="nume">
+                                <%= produs.nume %>
+                            </div>
+                            <div id="brand">
+                                <%= produs.brand %>
+                            </div>
+                            <hr>
+                            <img id="poza-mare" src="/resurse/imagini/produse/<%= produs.imagine %>">
+                            <hr>
+                            <div id="poze">
+                                <% for (let i=0; i < 4; i++) { %>
+                                    <img src="/resurse/imagini/produse/<%= produs.imagine %>">
+                                    <% } %>
+                            </div>
+                        </div>
+                        <div id="dreapta">
+                            <div id="sus" class="mycard">
+                                <div id="pret">
+                                    <%= produs.pret %> RON
+                                </div>
+                                <div id="stoc" <%=produs.stoc %> class="produs-stoc">
+                                    Stoc <%= produs.stoc %>
+                                </div>
+                                <div id="butoane">
+                                    <button class="btn-produs">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <div>Adaugă în coș</div>
+                                    </button>
+                                    <button class="btn-produs">
+                                        <i class="fa-solid fa-heart" style="color: rgb(255, 62, 94)"></i>
+                                        <div>Adaugă la favorite
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="jos" class="mycard">
+                                <div id="desc1">
+                                    <%= produs.descriere %>
+                                </div>
+                                <hr>
+                                <div id="desc2">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem quos, natus
+                                    voluptate numquam fugiat debitis officiis dolorem beatae ad ratione? Animi hic quis
+                                    quas dolore, nesciunt doloribus nemo! Totam, sequi.
+                                </div>
+                                <hr>
+                                <div>
+                                    <div style="font-weight: bold;">
+                                        Specificatii
+                                    </div>
+                                    <ul>
+                                        <% for (let spec of produs.specificatii) { %>
+                                            <li>
+                                                <%= spec %>
+                                            </li>
+                                            <% } %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <%- include("../fragmente/footer.ejs"); %>
+        </body>
+
+</html>
