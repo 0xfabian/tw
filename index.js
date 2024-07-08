@@ -132,7 +132,12 @@ app.get("/produse", function(req, res)
 {
     console.log("request " + req.url);
 
-    client.query("select * from public.produse", function(err, db_res)
+    let query = "select * from produse";
+
+    if(req.query.tip)
+        query += ` where tip = '${req.query.tip}'`
+
+    client.query(query, function(err, db_res)
     {
         if(err)
         {
@@ -141,14 +146,24 @@ app.get("/produse", function(req, res)
         }
         else
         {
+            let producatori = new Set();
+            let categorii = new Set();
+
+            for(let produs of db_res.rows)
+            {
+                producatori.add(produs.brand);
+                categorii.add(produs.categorie);
+            }
+
             res.render("pagini/produse", 
             {
                 produse: db_res.rows,
+                producatori: producatori,
+                categorii: categorii
             });
         }
     });
 })
-
 
 app.get("/favicon.ico", function(req, res) 
 {

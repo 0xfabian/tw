@@ -9,11 +9,64 @@
             <%- include("../fragmente/header.ejs"); %>
 
                 <main>
+                    <div class="filter-top">
+                        <input id="filtru-nume" type="text" placeholder="Denumirea produsului" class="searchbar"
+                            onchange="filter();">
+                        <button class="btn-cauta" onclick="filter();"><i
+                                class="fa-solid fa-magnifying-glass"></i>&nbsp;Cauta</button>
+                    </div>
+                    <div class="filter">
+                        <div>
+                            <label>Producător&nbsp;</label>
+                            <select id="filtru-prod" onchange="filter();">
+                                <option>Oricare</option>
+                                <% for (let producator of producatori) { %>
+                                    <option>
+                                        <%= producator %>
+                                    </option>
+                                    <% } %>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Categorie&nbsp;</label>
+                            <select id="filtru-cat" onchange="filter();">
+                                <option>Toate</option>
+                                <% for (let categorie of categorii) { %>
+                                    <option>
+                                        <%= categorie %>
+                                    </option>
+                                    <% } %>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Preț minim&nbsp;</label>
+                            <input id="filtru-pret-min" type="number" step="100" min="0" class="pret"
+                                onchange="filter();">
+                        </div>
+                        <div>
+                            <label>Preț maxim&nbsp;</label>
+                            <input id="filtru-pret-max" type="number" step="100" min="0" class="pret"
+                                onchange="filter();">
+                        </div>
+                        <div>
+                            <label>Preț&nbsp;</label>
+                            <select id="filtru-pret-sort" onchange="filter();">
+                                <option>-</option>
+                                <option>Crescător</option>
+                                <option>Descrescător</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>În stoc&nbsp;</label>
+                            <input id="filtru-stoc" type="checkbox" onchange="filter();">
+                        </div>
+                    </div>
 
-                    <div class="produse">
-                        <% produse.forEach(function(produs) { %>
-                            <div class="produs-item">
-                                <a href="/produs?id=<%= produs.id %>">
+                    <div id="produse" class="produse">
+                        <% produse.forEach(function(produs, index) { %>
+                            <div class="produs-item" producator="<%= produs.brand %>"
+                                categorie="<%= produs.categorie %>" pret="<%= produs.pret %>" index="<%= index %>">
+                                <a href="/produs/<%= produs.id %>">
                                     <img class="produs-img" src="/resurse/imagini/produse/<%= produs.imagine %>"></img>
                                     <div class="produs-nume">
                                         <%= produs.descriere %>
@@ -44,5 +97,84 @@
                 <%- include("../fragmente/footer.ejs"); %>
 
         </body>
+
+        <script>
+            function filter() {
+
+                let search = document.getElementById('filtru-nume').value;
+                let producator = document.getElementById('filtru-prod').value;
+                let categorie = document.getElementById('filtru-cat').value;
+
+                let pretMin = document.getElementById('filtru-pret-min').value;
+                let pretMax = document.getElementById('filtru-pret-max').value;
+
+                let sort = document.getElementById('filtru-pret-sort').selectedIndex;
+                let inStoc = document.getElementById('filtru-stoc').checked;
+
+                let produse = document.getElementsByClassName('produs-item');
+
+                if (pretMin === '')
+                    pretMin = 0;
+
+                if (pretMax === '')
+                    pretMax = Infinity;
+
+                function checkWordMatch(string1, string2) {
+                    const words1 = string1.toLowerCase().split(/\s+/);
+                    const words2 = string2.toLowerCase().split(/\s+/);
+
+                    const set2 = new Set(words2);
+
+                    for (let word of words1)
+                        if (set2.has(word))
+                            return true;
+
+                    return false;
+                }
+
+                for (let produs of produse) {
+
+                    let scoate = false;
+
+                    if (inStoc && produs.lastElementChild.lastElementChild.getAttribute('epuizat') != null)
+                        scoate = true;
+
+                    if (producator != "Oricare" && produs.getAttribute("producator") != producator)
+                        scoate = true;
+
+                    if (categorie != "Toate" && produs.getAttribute("categorie") != categorie)
+                        scoate = true;
+
+                    let pret = parseInt(produs.getAttribute("pret"));
+
+                    if (pret > pretMax || pret < pretMin)
+                        scoate = true;
+
+                    if (search.trim().length > 0 && !checkWordMatch(search, produs.children[0].children[1].textContent))
+                        scoate = true;
+
+                    if (scoate)
+                        produs.style.display = 'none';
+                    else
+                        produs.style.display = 'flex';
+                }
+
+                items = Array.from(produse);
+
+                if (sort == 0)
+                    items.sort((a, b) => parseInt(a.getAttribute("index")) - parseInt(b.getAttribute("index")));
+                else if (sort == 1)
+                    items.sort((a, b) => parseInt(a.getAttribute("pret")) - parseInt(b.getAttribute("pret")));
+                else if (sort == 2)
+                    items.sort((a, b) => parseInt(b.getAttribute("pret")) - parseInt(a.getAttribute("pret")));
+
+                let container = document.getElementById('produse');
+                container.innerHTML = '';
+
+                items.forEach(item => {
+                    container.appendChild(item);
+                });
+            }
+        </script>
 
 </html>
