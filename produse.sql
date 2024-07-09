@@ -43,3 +43,8 @@ INSERT INTO produse (nume, brand, descriere, pret, tip, categorie, stoc, specifi
 ('EVGA 600W', 'EVGA', 'Sursa EVGA 600W', 250, 'altele', 'Sursă', 'epuizat', '{"Putere: 600W", "Certificare: 80 Plus", "Tip cabluri: Ne-modulare", "Protectii: OPP/OVP/UVP/SCP"}', '{"evga-600w.jpg"}'),
 ('G.Skill Trident Z 32GB', 'G.Skill', 'Memorie RAM G.Skill Trident Z 32GB DDR4 3600MHz', 950, 'componente', 'Memorie RAM', 'suficient', '{"Capacitate: 32GB", "Frecventa: 3600MHz", "Tip: DDR4", "Latenta: CL18"}', '{"trident-z-32gb.jpg"}'),
 ('MSI GeForce RTX 3080', 'MSI', 'Placa video MSI GeForce RTX 3080 10GB', 5400, 'componente', 'Placă video', 'limitat', '{"Memorie: 10GB", "Tip memorie: GDDR6X", "Bus memorie: 320-bit", "Frecventa memorie: 19Gbps"}', '{"rtx-3080.jpg"}');
+
+create user fabian with encrypted password '123456';
+grant all privileges on database cti_2024 to fabian;
+grant all privileges on all tables in schema public to fabian;
+grant all privileges on all sequences in schema public to fabian;
