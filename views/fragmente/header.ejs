@@ -55,6 +55,27 @@
                 <a href="/galerie">Galerie</a>
                 <div class="nav-line"></div>
             </li>
+            <div id="simulateDarkMode" class="container" data-theme="light">
+                <button id="toggleDarkMode" type="button" class="btn-toggle" onclick="toggleDarkMode()">
+                    DARK MODE
+                </button>
+            </div>
         </ul>
     </nav>
+
+    <script>
+        function toggleDarkMode() {
+            const container = document.documentElement;
+            const buttonDarkMode = document.getElementById('toggleDarkMode');
+            const dataTheme = container.getAttribute('data-theme');
+
+            if (dataTheme === 'dark') {
+                container.setAttribute('data-theme', 'light');
+                buttonDarkMode.innerHTML = 'DARK MODE';
+            } else {
+                container.setAttribute('data-theme', 'dark');
+                buttonDarkMode.innerHTML = 'LIGHT MODE';
+            }
+        }
+    </script>
 </header>

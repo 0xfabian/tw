@@ -167,8 +167,6 @@ app.get("/produse", function(req, res)
 
 app.get("/produs/:id", function(req, res)
 {
-    console.log(req.params);
-
     if (req.params.id)
     {
         let id = parseInt(req.params.id);

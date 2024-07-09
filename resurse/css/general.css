@@ -1,19 +1,38 @@
-body
+:root
 {
     --background-color: rgb(245, 245, 245);
     --background-color-darker: rgb(220, 220, 220);
     --card-color: rgb(255, 255, 255);
-    --text-color: rgb(22, 22, 22);
     --border-color: rgb(230, 230, 230);
-    --highlight-color: rgb(157, 8, 8);
+    --text-color: rgb(13, 13, 13);
+
     --primary-color: rgb(56, 124, 233);
     --primary-color-darker: rgb(36, 92, 182);
     --primary-color-lighter: rgb(50, 170, 255);
     --table-hover-color: rgba(46, 126, 255, 0.7);
     --visited-color: rgb(0, 172, 202);
+
+    --go-up-shadow: rgba(0, 0, 0, 0.5);
+
     --navbar-height: 50px;
     --nav-line-height: 7px;
+}
 
+[data-theme="dark"]
+{
+    --background-color: rgb(18, 18, 18);
+    --background-color-darker: rgb(34, 34, 34);
+    --card-color: rgb(24, 24, 24);
+    --border-color: rgb(41, 41, 41);
+    --text-color: rgb(227, 227, 227);
+
+    --go-up-shadow: rgba(255, 255, 255, 0.5);
+
+    color-scheme: dark;
+}
+
+body
+{
     background: var(--background-color);
     color: var(--text-color);
     font-family: 'PT Sans';
@@ -183,7 +202,7 @@ tbody tr:hover {
     color: var(--text-color);
 
     font-size: 40px;
-    box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 10px 5px var(--go-up-shadow);
 
     transition: color 0.5s, font-size 1s, box-shadow 0.5s;
 }
@@ -252,7 +271,7 @@ tbody tr:hover {
 
 .tab:hover
 {
-    background: var(--highlight-color);
+    background: var(--border-color);
     transition: background 0.5s;
 }
 
@@ -318,7 +337,7 @@ nav ul > li
     width: 150px;
     line-height: var(--navbar-height);
     text-align: center;
-    transition: background 0.5s;
+    /* transition: background 0.5s; */
 }
 
 .nav-line
@@ -728,6 +747,13 @@ main a:hover
     padding: 20px;
 }
 
+.galerie-img > picture
+{
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
 .galerie-img:hover
 {
     filter: brightness(100%);
@@ -805,6 +831,9 @@ hr
     aspect-ratio: 1/1;
     padding: 30px;
     transition: padding 0.2s;
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .produs-img:hover
@@ -939,7 +968,7 @@ hr
     padding-left: 15px;
     padding-right: 15px;
     border: 1px solid var(--border-color);
-    background: white;
+    background: var(--card-color);
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.06);
 }
 
@@ -1018,6 +1047,8 @@ html
     width: 400px;
     padding: 50px;
     transition: padding 0.2s;
+    background: white;
+    border-radius: 10px;
 }
 
 .produs #poza-mare:hover
@@ -1067,7 +1098,7 @@ html
     width: 80px;
     padding: 20px;
     aspect-ratio: 1;
-    background: var(--card-color);
+    background: white;
     border: 1px solid var(--border-color);
     border-radius: 5px;
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.06);
@@ -1139,4 +1170,54 @@ html
     {
         margin-left: 0;
     }
+}
+
+h2
+{
+    color: rgb(36, 92, 182);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+hr
+{
+    border: none;
+    opacity: 1;
+}
+
+#reflexie
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#reflexie > h2:first-child
+{
+    transform: skewY(-15deg);
+}
+
+#reflexie > h2:last-child
+{
+    transform: scaleX(-1) skewY(-15deg);
+}
+
+#reflexie > h2:has( + h2:hover)
+{
+    color: cyan;
+}
+
+#reflexie > h2:hover
+{
+    color: cyan;
+}
+
+#reflexie > h2:hover + h2
+{
+    color: cyan;
+}
+
+img
+{
+    box-sizing: border-box;
 }
