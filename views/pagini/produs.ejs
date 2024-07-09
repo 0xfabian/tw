@@ -18,11 +18,13 @@
                                 <%= produs.brand %>
                             </div>
                             <hr>
-                            <img id="poza-mare" src="/resurse/imagini/produse/<%= produs.imagine %>">
+                            <div id="poza-mare"
+                                style="background-image: url('/resurse/imagini/produse/<%= produs.imagini[0] %>')">
+                            </div>
                             <hr>
                             <div id="poze">
-                                <% for (let i=0; i < 4; i++) { %>
-                                    <img src="/resurse/imagini/produse/<%= produs.imagine %>">
+                                <% for (let imagine of produs.imagini) { %>
+                                    <img class="change-img" src="/resurse/imagini/produse/<%= imagine %>">
                                     <% } %>
                             </div>
                         </div>
@@ -53,7 +55,8 @@
                                 <hr>
                                 <div id="desc2">
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem quos, natus
-                                    voluptate numquam fugiat debitis officiis dolorem beatae ad ratione? Animi hic quis
+                                    voluptate numquam fugiat debitis officiis dolorem beatae ad ratione? Animi hic
+                                    quis
                                     quas dolore, nesciunt doloribus nemo! Totam, sequi.
                                 </div>
                                 <hr>
@@ -76,5 +79,20 @@
 
                 <%- include("../fragmente/footer.ejs"); %>
         </body>
+
+        <script>
+            function setupImageHover() {
+                const images = Array.from(document.getElementsByClassName('change-img'));
+                const targetImage = document.getElementById('poza-mare');
+
+                images.forEach(image => {
+                    image.addEventListener('mouseover', () => {
+                        targetImage.style.backgroundImage = `url(${image.src})`;
+                    });
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', setupImageHover);
+        </script>
 
 </html>

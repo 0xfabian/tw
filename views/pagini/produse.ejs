@@ -67,7 +67,8 @@
                             <div class="produs-item" producator="<%= produs.brand %>"
                                 categorie="<%= produs.categorie %>" pret="<%= produs.pret %>" index="<%= index %>">
                                 <a href="/produs/<%= produs.id %>">
-                                    <img class="produs-img" src="/resurse/imagini/produse/<%= produs.imagine %>"></img>
+                                    <img class="produs-img"
+                                        src="/resurse/imagini/produse/<%= produs.imagini[0] %>"></img>
                                     <div class="produs-nume">
                                         <%= produs.descriere %>
                                     </div>

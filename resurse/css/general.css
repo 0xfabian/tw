@@ -1046,15 +1046,16 @@ html
 .produs #poza-mare
 {
     width: 400px;
-    padding: 50px;
     transition: padding 0.2s;
     background: white;
     border-radius: 10px;
-}
-
-.produs #poza-mare:hover
-{
-    padding: 40px;
+    box-sizing: border-box;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75%;
+    transition: background-image 0.5s;
+    margin: auto;
 }
 
 .produs #desc1
@@ -1164,12 +1165,17 @@ html
 
     .produs #img
     {
-        margin-bottom: 10px;
+        margin-bottom: 40px;
     }
 
     .produs #drepta
     {
         margin-left: 0;
+    }
+
+    .produs #jos
+    {
+        margin-top: 40px;
     }
 }
 
