@@ -55,27 +55,30 @@
                 <a href="/galerie">Galerie</a>
                 <div class="nav-line"></div>
             </li>
-            <div id="simulateDarkMode" class="container" data-theme="light">
-                <button id="toggleDarkMode" type="button" class="btn-toggle" onclick="toggleDarkMode()">
-                    DARK MODE
-                </button>
-            </div>
         </ul>
+        <button id="theme-toggle" type="button" class="btn-toggle" onclick="toggleDarkMode()">
+            <i id="theme-icon" class=""></i>
+        </button>
     </nav>
 
     <script>
-        function toggleDarkMode() {
-            const container = document.documentElement;
-            const buttonDarkMode = document.getElementById('toggleDarkMode');
-            const dataTheme = container.getAttribute('data-theme');
+        document.addEventListener("DOMContentLoaded", () => {
+            const themeToggleBtn = document.getElementById("theme-toggle");
+            const themeIcon = document.getElementById("theme-icon");
 
-            if (dataTheme === 'dark') {
-                container.setAttribute('data-theme', 'light');
-                buttonDarkMode.innerHTML = 'DARK MODE';
-            } else {
-                container.setAttribute('data-theme', 'dark');
-                buttonDarkMode.innerHTML = 'LIGHT MODE';
-            }
-        }
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+            themeIcon.className = savedTheme === "dark" ? "fas fa-moon" : "fas fa-sun";
+
+            themeToggleBtn.addEventListener("click", () => {
+                let currentTheme = document.documentElement.getAttribute("data-theme");
+                let newTheme = currentTheme === "dark" ? "light" : "dark";
+
+                document.documentElement.setAttribute("data-theme", newTheme);
+                themeIcon.className = newTheme === "dark" ? "fas fa-moon" : "fas fa-sun";
+                localStorage.setItem("theme", newTheme);
+            });
+        });
     </script>
+
 </header>

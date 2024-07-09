@@ -320,6 +320,7 @@ nav ul
     padding: 0;
     margin: 0;
     height: 100%;
+    margin-right: auto;
 }
 
 nav a
@@ -1220,4 +1221,28 @@ hr
 img
 {
     box-sizing: border-box;
+}
+
+#theme-toggle
+{
+    width: 35px;
+    aspect-ratio: 1;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: var(--border-color);
+    margin-right: 50px;
+}
+
+@media (max-width: 600px)
+{
+    #theme-toggle
+    {
+        position: fixed;
+        top: calc((var(--navbar-height) - 35px) / 2);
+        right: 0;
+        margin-right: 10px;
+        z-index: 2;
+    }
 }
